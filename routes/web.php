@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::view('/dashboard','user-side.dashboard');
+Route::view('/category','user-side.category');
+Route::view('/subcategory','user-side.subcategory');
+Route::view('/searchfile','user-side.findfile');
