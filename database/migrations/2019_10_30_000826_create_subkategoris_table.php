@@ -15,7 +15,13 @@ class CreateSubkategorisTable extends Migration
     {
         Schema::create('subkategoris', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBiginteger('kategori_id');
+            $table->unsignedBiginteger('user_id');
+            $table->string('nama_subkategori');
             $table->timestamps();
+
+            $table->foreign('kategori_id')->references('id')->on('kategoris');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

@@ -15,7 +15,11 @@ class CreateDataTable extends Migration
     {
         Schema::create('data', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBiginteger('subkategori_id');
+            $table->string('filename');
             $table->timestamps();
+
+            $table->foreign('subkategori_id')->references('id')->on('subkategoris');
         });
     }
 
