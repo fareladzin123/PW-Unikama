@@ -16,6 +16,7 @@ class CreateDataTable extends Migration
         Schema::create('data', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBiginteger('subkategori_id');
+            $table->string('nama_data');
             $table->string('filename');
             $table->timestamps();
 
