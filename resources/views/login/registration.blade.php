@@ -28,7 +28,7 @@
 <div class="auth-form">
     <div class="form">
         <img src="assets/img/logo.png">
-        <form>
+        <form action="postRegister" method="post">
             <label>Full Name</label>
             <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="your fullname" name="name">

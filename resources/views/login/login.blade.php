@@ -24,7 +24,7 @@
 <div class="auth-form">
     <div class="form">
         <img src="assets/img/logo.png">
-        <form>
+        <form action="{{ route('checkLogin') }}}}" method="post">
             <label>Email</label>
             <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="you@example.com" name="username">
