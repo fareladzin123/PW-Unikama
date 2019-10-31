@@ -18,4 +18,6 @@ Route::get('/', function () {
 Route::view('/dashboard','user-side.dashboard');
 Route::view('/category','user-side.category');
 Route::view('/subcategory','user-side.subcategory');
-Route::view('/searchfile','user-side.findfile');
+Route::view('/findfile','user-side.findfile');
+
+Route::view('/login','login.login');
