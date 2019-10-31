@@ -27,12 +27,12 @@
         <form>
             <label>Email</label>
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="you@example.com">
+                <input type="text" class="form-control" placeholder="you@example.com" name="username">
             </div>
 
             <label>Password</label>
             <div class="input-group mb-3">
-                <input type="password" class="form-control" placeholder="Masukkan password...">
+                <input type="password" class="form-control" placeholder="Masukkan password..." name="password">
             </div>
 
             <button type="submit" name="loginSubmit" class="btn btn-submit text-uppercase fullwidth">Masuk</button>

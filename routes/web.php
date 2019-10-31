@@ -29,4 +29,5 @@ Route::view('/subcategory','user-side.subcategory');
 Route::view('/findfile','user-side.findfile');
 
 Route::view('/login','login.login');
+Route::view('/registration','login.registration');
 Route::view('/searchfile','user-side.findfile');
