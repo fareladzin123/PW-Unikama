@@ -15,9 +15,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//Auth Controller
+Route::get('/login', 'AuthController@indexLogin')->name('login');
+Route::post('/login', 'AuthController@checkLogin')->name('checkLogin');
+Route::get('/logout', 'AuthController@logout')->name('logout');
+Route::get('/register', 'AuthController@indexRegister')->name('register');
+Route::post('/register', 'AuthController@postRegister')->name('postRegister');
+
 Route::view('/dashboard','user-side.dashboard');
 Route::view('/category','user-side.category');
 Route::view('/subcategory','user-side.subcategory');
+
 Route::view('/findfile','user-side.findfile');
 
 Route::view('/login','login.login');
+Route::view('/searchfile','user-side.findfile');
