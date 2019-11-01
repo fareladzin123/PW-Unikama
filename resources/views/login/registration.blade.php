@@ -28,15 +28,16 @@
 <div class="auth-form">
     <div class="form">
         <img src="assets/img/logo.png">
-        <form action="postRegister" method="post">
+        <form action="{{route('postRegister')}}" method="post">
+        {{csrf_field()}}
             <label>Full Name</label>
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="your fullname" name="name">
+                <input type="text" class="form-control" placeholder="Masukan nama..." name="name">
             </div>
 
             <label>Username</label>
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="you@example.com" name="username">
+                <input type="text" class="form-control" placeholder="Masukan username..." name="username">
             </div>
 
             <label>Password</label>

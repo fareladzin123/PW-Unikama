@@ -24,10 +24,11 @@
 <div class="auth-form">
     <div class="form">
         <img src="assets/img/logo.png">
-        <form action="{{ route('checkLogin') }}}}" method="post">
-            <label>Email</label>
+        <form action="{{ route('checkLogin') }}" method="post">
+        {{csrf_field()}}
+            <label>Username</label>
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="you@example.com" name="username">
+                <input type="text" class="form-control" placeholder="Masukan username..." name="username">
             </div>
 
             <label>Password</label>
@@ -39,7 +40,7 @@
             <div class="devide-line mt-4 mb-3">
                 <hr> atau <hr>
             </div>
-            <a class="btn btn-register text-uppercase fullwidth" href="/registration">Daftar Akun</a>
+            <a class="btn btn-register text-uppercase fullwidth" href="/register">Daftar Akun</a>
         </form>
     </div>
     <div class="form-bg"></div>

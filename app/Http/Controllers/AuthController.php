@@ -25,7 +25,7 @@ class AuthController extends Controller
         ]);
         $credentials = $request->only('username', 'password');
         if (Auth::attempt($credentials)) {
-            return redirect('/home');
+            return redirect('/user/dashboard');
         }
         else {
             return redirect('/login')->with('alert-fail','Email atau password salah!');
@@ -47,12 +47,12 @@ class AuthController extends Controller
             ]);
 
         $data = new User();
-        $data->nama = $request->name;
+        $data->name = $request->name;
         $data->username = $request->username;
         $data->password = bcrypt($request->password);
         $data->save();
 
-        return redirect('/login');
+        return redirect('/login')->with('alert-success','Berhasil daftar, silahkan login');
     }
     public function logout()
     {
