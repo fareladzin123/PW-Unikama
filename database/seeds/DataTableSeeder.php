@@ -14,6 +14,7 @@ class DataTableSeeder extends Seeder
         DB::table('data')->insert([
             [
                 'subkategori_id' => '1',
+                'nama_data' => 'Foto KTP',
                 'filename' => 'image1.jpeg'
             ]
         ]);

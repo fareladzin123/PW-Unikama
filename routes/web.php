@@ -22,9 +22,8 @@ Route::get('/logout', 'AuthController@logout')->name('logout');
 Route::get('/register', 'AuthController@indexRegister')->name('register');
 Route::post('/register', 'AuthController@postRegister')->name('postRegister');
 
-Route::view('/dashboard','user-side.dashboard');
-Route::view('/category','user-side.category');
-Route::view('/subcategory','user-side.subcategory');
 
-Route::view('/findfile','user-side.findfile');
-Route::view('/searchfile','user-side.findfile');
+Route::get('/dashboard','UserController@dashboard');
+Route::get('/category','UserController@category');
+Route::get('/subcategory','UserController@subcategory');
+Route::get('/searchfile','UserController@searchfile');
