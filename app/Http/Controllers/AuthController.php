@@ -14,7 +14,7 @@ class AuthController extends Controller
 { 
     public function indexLogin() 
     {
-        return view('login');
+        return view('login.login');
     }
 
     public function checkLogin(Request $request)
@@ -34,7 +34,7 @@ class AuthController extends Controller
 
     public function indexRegister() 
     {
-        return view('signUp');
+        return view('login.registration');
     }
 
 

@@ -152,6 +152,24 @@ nav img {
   border: 1px solid #d0d6db !important;
 }
 
+.btn-submit {
+  padding: 12px 0 !important;
+  background: #efb607 !important;
+  box-shadow: 0 2px 12px -6px #cc292f!important;
+  font-size: 14px !important;
+  color: #fff !important;
+  font-weight: bold !important;
+}
+
+.btn-register {
+  padding: 12px 0 !important;
+  background: #ee9601 !important;
+  box-shadow: 0 2px 12px -6px #cc292f!important;
+  font-size: 14px !important;
+  color: #fff !important;
+  font-weight: bold !important;
+}
+
 .add-data {
   width: 30px;
   height: 30px;
@@ -165,7 +183,46 @@ nav img {
   background: #fff;
 }
 
+.auth-form {
+  display: grid;
+  grid-template-columns: 35% 65%;
+  height: 100vh;
+}
+
+.auth-form .form {
+  padding: 10vh 15%;
+}
+
+.auth-form .form img {
+  width: 40%;
+  margin: 0 30% 20px;
+}
+
+.auth-form .form-bg {
+  background-image: url("../img/login.jpeg");
+  background-size: cover !important;
+}
+
+.fullwidth {
+  width: 100%;
+}
+
+.devide-line {
+  display: flex;
+  color: #afb4b9;
+}
+
+.devide-line hr {
+  width: 40%;
+}
+
 /* Responsives */
+
+@media only screen and (max-width: 1150px) {
+  .auth-form {
+    grid-template-columns: 45% 55%;
+  }
+}
 
 @media only screen and (max-width: 1050px) {
   .search-bar {
@@ -174,6 +231,12 @@ nav img {
   .folder {
     display: grid;
     grid-template-columns: 33.3% 33.3% 33.3%;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .auth-form {
+    grid-template-columns: 60% 40%;
   }
 }
 
@@ -190,6 +253,9 @@ nav img {
   }
   .category-folder, .file {
     margin: 0 10px 10px 0;
+  }
+  .auth-form {
+    display: block;
   }
 }
 
@@ -229,6 +295,10 @@ nav img {
 
   .category-folder, .file {
     margin: 0 10px 10px 0;
+  }
+
+  .auth-form .form {
+    padding: 10vh 10%;
   }
 }
 

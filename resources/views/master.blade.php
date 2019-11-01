@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="assets/img/logo.png" type="image/x-icon">
-    <title>Unikama Forlive</title>
+    <title>Arsipin</title>
 
     <script src="assets/js/jquery.min.js"></script>
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
@@ -21,7 +21,7 @@
 <body>
 <nav class="row">
     <div class="col-md-3">
-        <img src="assets/img/logo.jpg" alt="logo_arsipin"><span class="ml-3">Unikama</span>
+        <img src="assets/img/logo.png" alt="logo_arsipin"><span class="ml-3">Arsipin</span>
     </div>
     <div class="col-md-7">
         <div class="search-bar">
