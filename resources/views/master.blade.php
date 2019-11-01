@@ -62,7 +62,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <a class="btn btn-secondary">Logout</a>
+
+                <a class="btn btn-secondary" href="{{route('logout')}}">Logout</a>
             </div>
         </div>
     </div>

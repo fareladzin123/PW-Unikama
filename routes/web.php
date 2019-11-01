@@ -22,7 +22,7 @@ Route::get('/logout', 'AuthController@logout')->name('logout');
 Route::get('/register', 'AuthController@indexRegister')->name('register');
 Route::post('/register', 'AuthController@postRegister')->name('postRegister');
 
-Route::prefix('user')->middleware(['auth','revalidate'])->group(function(){
+Route::middleware(['auth','revalidate'])->group(function(){
     Route::get('/dashboard','UserController@dashboard');
     Route::get('/category','UserController@category');
     Route::get('/subcategory','UserController@subcategory');
