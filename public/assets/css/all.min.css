@@ -13,6 +13,10 @@ a {
   color: #5f6368 !important;
 }
 
+.alert {
+  border: none !important;
+}
+
 label {
   font-size: 0.9rem;
   color: #5f6368;

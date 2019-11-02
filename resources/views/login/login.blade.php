@@ -24,6 +24,23 @@
 <div class="auth-form">
     <div class="form">
         <img src="assets/img/logo.png">
+        @if(\Session::has('alert-logout'))
+            <div class="alert alert-warning">
+                <div>{{Session::get('alert-logout')}}</div>
+            </div>
+        @endif
+
+        @if(\Session::has('alert-fail'))
+            <div class="alert alert-danger">
+                <div>{{Session::get('alert-fail')}}</div>
+            </div>
+        @endif
+
+        @if(\Session::has('alert-success'))
+            <div class="alert alert-success">
+                <div>{{Session::get('alert-success')}}</div>
+            </div>
+        @endif
         <form action="{{ route('checkLogin') }}" method="post">
         {{csrf_field()}}
             <label>Username</label>
