@@ -34,7 +34,7 @@
 
             <a href="">
                 <div class="file">
-                    <div class="file-img" style="background: url(assets/img/un.png);"></div>
+                    <div class="file-img" style="background: url(../assets/img/un.png);"></div>
                     <div class="file-detail">
                         <i class="fa fa-folder-open"></i> Surat Akta Kelahiran <br>
                         <span class="d-block mt-4 text-right">28 Januari 2019</span>
@@ -44,7 +44,7 @@
 
             <a href="">
                 <div class="file">
-                    <div class="file-img" style="background: url(assets/img/code.jpg);"></div>
+                    <div class="file-img" style="background: url(../assets/img/code.jpg);"></div>
                     <div class="file-detail">
                         <i class="fa fa-folder-open"></i> Surat Akta Kelahiran <br>
                         <span class="d-block mt-4 text-right">28 Januari 2019</span>
@@ -54,7 +54,7 @@
 
             <a href="">
                 <div class="file">
-                    <div class="file-img" style="background: url(assets/img/un.png);"></div>
+                    <div class="file-img" style="background: url(../assets/img/un.png);"></div>
                     <div class="file-detail">
                         <i class="fa fa-folder-open"></i> Surat Akta Kelahiran <br>
                         <span class="d-block mt-4 text-right">28 Januari 2019</span>
@@ -64,7 +64,7 @@
 
             <a href="">
                 <div class="file">
-                    <div class="file-img" style="background: url(assets/img/un.png);"></div>
+                    <div class="file-img" style="background: url(../assets/img/un.png);"></div>
                     <div class="file-detail">
                         <i class="fa fa-folder-open"></i> Surat Akta Kelahiran <br>
                         <span class="d-block mt-4 text-right">28 Januari 2019</span>

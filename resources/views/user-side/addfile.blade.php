@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="assets/img/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/img/logo.png" type="image/x-icon">
     <title>Arsipin</title>
 
-    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/all.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <style>
@@ -19,14 +19,14 @@
         color: #bfc9ce !important;
     }
     .form-bg {
-        background-image: url("assets/img/addfile.jpeg") !important;
+        background-image: url("../assets/img/addfile.jpeg") !important;
     }
 
 </style>
 <body>
 <div class="auth-form">
     <div class="form">
-        <img src="assets/img/logo.png">
+        <img src="../assets/img/logo.png">
         <form action="{{ route('checkLogin') }}" method="post">
             {{csrf_field()}}
             <label>Nama File</label>
