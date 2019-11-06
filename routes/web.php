@@ -26,9 +26,10 @@ Route::middleware(['auth','revalidate'])->group(function(){
     Route::get('/dashboard/{user_id}','UserController@dashboard');
     Route::get('/category/{user_id}','UserController@category');
     Route::get('/subcategory/{user_id}/{kategori_id}','UserController@subcategory');
-    Route::get('/searchfile','UserController@searchfile');    
+    Route::get('/addfile/{kategori_id}','UserController@addfile');
+    Route::get('/searchfile/{nama_data}','UserController@searchfile');
 });
-
-// Ubah password controller
-Route::get('/upPass', 'AuthController@changepass')->name('changepass');
-Route::post('/upPass', 'AuthController@uppass')->name('uppass');
+    
+    // Ubah password controller
+    Route::get('/upPass', 'AuthController@changepass')->name('changepass');
+    Route::post('/upPass', 'AuthController@uppass')->name('uppass');
