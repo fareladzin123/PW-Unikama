@@ -43,50 +43,29 @@
 <content class="d-block mt-4">
     <div aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="home.html">Home</a></li>
-            <li class="breadcrumb-item"><a href="category.html">Data Kendaraan</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Surat Tanda Nomor Kendaraan</li>
+            <li class="breadcrumb-item"><a href="../dashboard">Home</a></li>
+            @foreach($kategori as $k)
+            <li class="breadcrumb-item"><a href="../category/{{$k->id}}">{{$k->nama_kategori}}</a></li>
+            @endforeach
+            @foreach($subkategori as $s)            
+            <li class="breadcrumb-item active" aria-current="page">{{$s->nama_subkategori}}</li>
+            @endforeach
         </ol>
     </div>
-
-    <label for="">Arsip Surat Tanda Nomor Kendaraan</label>
+    @foreach($subkategori as $s)
+    <label for="">{{$s->nama_subkategori}}</label>
+    @endforeach
     <div class="folder">
-
+    @foreach($data as $d)
         <div class="file">
-            <div class="file-img" style="background: url(../../assets/img/un.png);"></div>
+            <div class="file-img" style="background: url(../uploads/images/{{$d->filename}});"></div>
             <div class="file-detail">
-                <a href=""><i class="fa fa-folder-open"></i> Foto STNK <br></a>
+                <a href=""><i class="fa fa-folder-open"></i> {{$d->nama_data}} <br></a>
                 <span class="d-block mt-4 text-right"><a href="" class="btn btn-transparent"><i class="fa fa-trash"></i> Hapus
               File</a></span>
             </div>
         </div>
-
-        <div class="file">
-            <div class="file-img" style="background: url(../../assets/img/un.png);"></div>
-            <div class="file-detail">
-                <a href=""><i class="fa fa-folder-open"></i> Foto STNK <br></a>
-                <span class="d-block mt-4 text-right"><a href="" class="btn btn-transparent"><i class="fa fa-trash"></i> Hapus
-              File</a></span>
-            </div>
-        </div>
-
-        <div class="file">
-            <div class="file-img" style="background: url(../../assets/img/un.png);"></div>
-            <div class="file-detail">
-                <a href=""><i class="fa fa-folder-open"></i> Foto STNK <br></a>
-                <span class="d-block mt-4 text-right"><a href="" class="btn btn-transparent"><i class="fa fa-trash"></i> Hapus
-              File</a></span>
-            </div>
-        </div>
-
-        <div class="file">
-            <div class="file-img" style="background: url(../../assets/img/un.png);"></div>
-            <div class="file-detail">
-                <a href=""><i class="fa fa-folder-open"></i> Foto STNK <br></a>
-                <span class="d-block mt-4 text-right"><a href="" class="btn btn-transparent"><i class="fa fa-trash"></i> Hapus
-              File</a></span>
-            </div>
-        </div>
+    @endforeach
 
     </div>
 

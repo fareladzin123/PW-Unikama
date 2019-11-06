@@ -10,69 +10,31 @@
 
         <label for="">Kategori Data</label>
         <div class="folder">
+        @foreach($kategori as $k)
             <div class="category-folder">
-                <a href="" style="padding-top: .25rem;"><i class="fa fa-folder"></i> Data Sekolah
+                <a href="category/{{$k->id}}" style="padding-top: .25rem;"><i class="fa fa-folder"></i> {{$k->nama_kategori}}
                 </a>
                 <a class="add-data float-right" data-toggle="modal" data-target="#addSubCategory"><i class="fa fa-plus"></i></a>
             </div>
-
-            <div class="category-folder">
-                <a href="" style="padding-top: .25rem;"><i class="fa fa-folder"></i> Data Sekolah
-                </a>
-                <a class="add-data float-right" data-toggle="modal" data-target="#addSubCategory"><i class="fa fa-plus"></i></a>
-            </div>
-
-            <div class="category-folder">
-                <a href="" style="padding-top: .25rem;"><i class="fa fa-folder"></i> Data Sekolah
-                </a>
-                <a class="add-data float-right" data-toggle="modal" data-target="#addSubCategory"><i class="fa fa-plus"></i></a>
-            </div>
+        @endforeach
         </div>
 
+        @if(!!empty($data))
         <label for="" class="mt-5">Terakhir Ditambahkan</label>
         <div class="folder">
-
+            @foreach($data as $d)
             <a href="">
                 <div class="file">
-                    <div class="file-img" style="background: url(../assets/img/un.png);"></div>
+                    <div class="file-img" style="background: url(../uploads/images/{{$d->filename}});"></div>
                     <div class="file-detail">
-                        <i class="fa fa-folder-open"></i> Surat Akta Kelahiran <br>
-                        <span class="d-block mt-4 text-right">28 Januari 2019</span>
+                        <i class="fa fa-folder-open"></i> {{$d->nama_data}} <br>
+                        <span class="d-block mt-4 text-right">{{$d->created_at}}</span>
                     </div>
                 </div>
             </a>
-
-            <a href="">
-                <div class="file">
-                    <div class="file-img" style="background: url(../assets/img/code.jpg);"></div>
-                    <div class="file-detail">
-                        <i class="fa fa-folder-open"></i> Surat Akta Kelahiran <br>
-                        <span class="d-block mt-4 text-right">28 Januari 2019</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="">
-                <div class="file">
-                    <div class="file-img" style="background: url(../assets/img/un.png);"></div>
-                    <div class="file-detail">
-                        <i class="fa fa-folder-open"></i> Surat Akta Kelahiran <br>
-                        <span class="d-block mt-4 text-right">28 Januari 2019</span>
-                    </div>
-                </div>
-            </a>
-
-            <a href="">
-                <div class="file">
-                    <div class="file-img" style="background: url(../assets/img/un.png);"></div>
-                    <div class="file-detail">
-                        <i class="fa fa-folder-open"></i> Surat Akta Kelahiran <br>
-                        <span class="d-block mt-4 text-right">28 Januari 2019</span>
-                    </div>
-                </div>
-            </a>
-
+            @endforeach
         </div>
+        @endif
     </content>
     <div class="modal fade" id="addSubCategory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
