@@ -12,7 +12,7 @@
         <div class="folder mb-4">
 
             <div class="file">
-                <div class="file-img" style="background: url(assets/img/un.png);"></div>
+                <div class="file-img" style="background: url(../assets/img/un.png);"></div>
                 <div class="file-detail">
                     <a href=""><i class="fa fa-folder-open"></i> Foto STNK <br></a>
                     <span class="d-block mt-4 text-right"><a href="" class="btn btn-transparent"><i class="fa fa-trash"></i> Hapus
@@ -21,7 +21,7 @@
             </div>
 
             <div class="file">
-                <div class="file-img" style="background: url(assets/img/un.png);"></div>
+                <div class="file-img" style="background: url(../assets/img/un.png);"></div>
                 <div class="file-detail">
                     <a href=""><i class="fa fa-folder-open"></i> Foto STNK <br></a>
                     <span class="d-block mt-4 text-right"><a href="" class="btn btn-transparent"><i class="fa fa-trash"></i> Hapus
@@ -40,7 +40,7 @@
         <div class="folder mb-5">
 
             <div class="file">
-                <div class="file-img" style="background: url(assets/img/un.png);"></div>
+                <div class="file-img" style="background: url(../assets/img/un.png);"></div>
                 <div class="file-detail">
                     <a href=""><i class="fa fa-folder-open"></i> Foto STNK <br></a>
                     <span class="d-block mt-4 text-right"><a href="" class="btn btn-transparent"><i class="fa fa-trash"></i> Hapus
@@ -49,7 +49,7 @@
             </div>
 
             <div class="file">
-                <div class="file-img" style="background: url(assets/img/un.png);"></div>
+                <div class="file-img" style="background: url(../assets/img/un.png);"></div>
                 <div class="file-detail">
                     <a href=""><i class="fa fa-folder-open"></i> Foto STNK <br></a>
                     <span class="d-block mt-4 text-right"><a href="" class="btn btn-transparent"><i class="fa fa-trash"></i> Hapus
@@ -57,7 +57,7 @@
                 </div>
             </div>
             <div class="file">
-                <div class="file-img" style="background: url(assets/img/un.png);"></div>
+                <div class="file-img" style="background: url(../assets/img/un.png);"></div>
                 <div class="file-detail">
                     <a href=""><i class="fa fa-folder-open"></i> Foto STNK <br></a>
                     <span class="d-block mt-4 text-right"><a href="" class="btn btn-transparent"><i class="fa fa-trash"></i> Hapus
