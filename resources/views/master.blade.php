@@ -55,8 +55,8 @@
                     <div class="profile-avatar text-center pt-2"
                          style="width: 75px; height: 75px; font-size: 35px; padding-top: 11px !important; cursor: default">D</div>
                     <div style="font-size: 0.9rem">
-                        <b>Dicky Julian Pratama</b><br>
-                        julian.ech<br>
+                        <b>{{Auth::user()->name}}</b><br>
+                        {{Auth::user()->username}}<br>
                         <a href="" class="btn btn-logout mt-2">Ubah Kata Sandi</a>
                     </div>
                 </div>
