@@ -23,9 +23,9 @@ Route::get('/register', 'AuthController@indexRegister')->name('register');
 Route::post('/register', 'AuthController@postRegister')->name('postRegister');
 
 Route::middleware(['auth','revalidate'])->group(function(){
-    Route::get('/dashboard/{user_id}','UserController@dashboard');
-    Route::get('/category/{user_id}','UserController@category');
-    Route::get('/subcategory/{user_id}/{kategori_id}','UserController@subcategory');
+    Route::get('/dashboard','UserController@dashboard');
+    Route::get('/category','UserController@category');
+    Route::get('/subcategory/{kategori_id}','UserController@subcategory');
     Route::get('/addfile/{kategori_id}','UserController@addfile');
     Route::get('/searchfile/{nama_data}','UserController@searchfile');
 });

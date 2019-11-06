@@ -5,23 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="../../assets/img/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/img/logo.png" type="image/x-icon">
     <title>Arsipin</title>
 
     <script src="../assets/js/jquery.min.js"></script>
-    <link rel="stylesheet" href="../../assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../assets/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/css/all.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-    <script src="../../assets/js/bootstrap.min.js"></script>
-    <script src="../../assets/js/jquery-3.2.1.slim.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery-3.2.1.slim.min.js"></script>
 
 </head>
 
 <body>
 <nav class="row">
     <div class="col-md-3">
-        <img src="../../assets/img/logo.png" alt="logo_arsipin"><span class="ml-3">Arsipin</span>
+        <img src="../assets/img/logo.png" alt="logo_arsipin"><span class="ml-3">Arsipin</span>
     </div>
     <div class="col-md-7">
         <div class="search-bar">
