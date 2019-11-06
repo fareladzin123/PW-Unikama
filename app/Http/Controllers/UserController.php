@@ -21,4 +21,8 @@ class UserController extends Controller
     public function searchfile(){
         return view('user-side.findfile');        
     }
+
+    public function addfile(){
+        return view('user-side.addfile');
+    }
 }

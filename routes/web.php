@@ -26,5 +26,6 @@ Route::middleware(['auth','revalidate'])->group(function(){
     Route::get('/dashboard','UserController@dashboard');
     Route::get('/category','UserController@category');
     Route::get('/subcategory','UserController@subcategory');
-    Route::get('/searchfile','UserController@searchfile');    
+    Route::get('/searchfile','UserController@searchfile');
+    Route::get('/addfile','UserController@addfile');
 });
