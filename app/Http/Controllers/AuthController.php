@@ -75,6 +75,6 @@ class AuthController extends Controller
 
         User::find(auth()->user()->id)->update(['password' => Hash::make($request->new_password)]);
 
-        return redirect('/dashboard/'.Auth::user()->id);
+        return redirect('/dashboard')->with('alert-success','Berhasil update password');
     }
 }
