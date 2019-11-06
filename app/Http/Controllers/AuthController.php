@@ -59,4 +59,19 @@ class AuthController extends Controller
         Auth::logout();
         return redirect('login')->with('alert-logout','Berhasil Logout!');
     }
+
+    public function changepass($id){
+        return view('changepass');
+    }
+    public function uppass(Request $request){
+        $request->validate([
+            'current_password' => ['required', new MatchOldPassword],
+            'new_password' => ['required'],
+            'new_confirm_password' => ['same:new_password'],
+        ]);
+
+        User::find(auth()->user()->id)->update(['password' => Hash::make($request->new_password)]);
+
+        return redirect('/dashboard')->with('alert-success','Berhasil update password');
+    }
 }
