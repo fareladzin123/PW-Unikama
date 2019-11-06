@@ -57,7 +57,7 @@
                     <div style="font-size: 0.9rem">
                         <b>{{Auth::user()->name}}</b><br>
                         {{Auth::user()->username}}<br>
-                        <a href="" class="btn btn-logout mt-2">Ubah Kata Sandi</a>
+                        <a href="{{route('upPass')}}" class="btn btn-logout mt-2">Ubah Kata Sandi</a>
                     </div>
                 </div>
             </div>

@@ -9,6 +9,8 @@ use App\User;
 use App\Aktivasi;
 use Carbon\Carbon;
 use App\Mail\UserActivation;
+use App\Rules\MatchOldPassword;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 { 
@@ -61,8 +63,8 @@ class AuthController extends Controller
         return redirect('login')->with('alert-logout','Berhasil Logout!');
     }
 
-    public function changepass($id){
-        return view('changepass');
+    public function changepass(){
+        return view('upPass');
     }
     public function uppass(Request $request){
         $request->validate([
@@ -73,6 +75,6 @@ class AuthController extends Controller
 
         User::find(auth()->user()->id)->update(['password' => Hash::make($request->new_password)]);
 
-        return redirect('/dashboard')->with('alert-success','Berhasil update password');
+        return redirect('/dashboard/'.Auth::user()->id);
     }
 }

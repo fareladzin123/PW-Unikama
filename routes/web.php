@@ -31,5 +31,5 @@ Route::middleware(['auth','revalidate'])->group(function(){
 });
     
     // Ubah password controller
-    Route::get('/upPass', 'AuthController@changepass')->name('changepass');
+    Route::get('/upPass', 'AuthController@changepass')->name('upPass');
     Route::post('/upPass', 'AuthController@uppass')->name('uppass');
