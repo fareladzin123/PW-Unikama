@@ -27,20 +27,22 @@
 <div class="auth-form">
     <div class="form">
         <img src="../assets/img/logo.png">
-        <form action="{{ route('checkLogin') }}" method="post">
+        @foreach($subkategori as $s)
+        <form action="{{ route('addfileStore',$s->id)}}" method="post">
             {{csrf_field()}}
             <label>Nama File</label>
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="contoh: filesaya*" name="filename">
+                <input type="text" class="form-control" placeholder="contoh: filesaya*" name="nama_data">
             </div>
 
             <label>Berkas File</label>
             <div class="input-group mb-3">
-                <input type="file" class="form-control" name="file" style="height: fit-content">
+                <input type="file" class="form-control" name="filename" style="height: fit-content">
             </div>
 
-            <button type="submit" name="loginSubmit" class="btn btn-submit text-uppercase fullwidth">Tambah File</button>
+            <button type="submit"class="btn btn-submit text-uppercase fullwidth">Tambah File</button>
         </form>
+        @endforeach
     </div>
     <div class="form-bg"></div>
 </div>

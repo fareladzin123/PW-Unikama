@@ -57,8 +57,8 @@
             <div class="category-folder">
                 <a href="../subcategory/{{$s->id}}" style="padding-top: .25rem; display: -webkit-inline-box;"><i class="fa fa-folder"></i> {{$s->nama_subkategori}}
                 </a>
-                <a href="" class="add-data float-right ml-1"><i class="fa fa-trash"></i></a>
-                <a href="" class="add-data float-right"><i class="fa fa-plus"></i></a>
+                <a href="../subcategory/delete/{{$s->id}}" class="add-data float-right ml-1"><i class="fa fa-trash"></i></a>
+                <a href="../addfile/{{$s->id}}" class="add-data float-right"><i class="fa fa-plus"></i></a>
             </div>
         @endforeach
         </div>

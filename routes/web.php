@@ -24,10 +24,18 @@ Route::post('/register', 'AuthController@postRegister')->name('postRegister');
 
 Route::middleware(['auth','revalidate'])->group(function(){
     Route::get('/dashboard','UserController@dashboard');
-    Route::get('/category/{kategori_id}','UserController@category');
-    Route::get('/subcategory/{subkategori_id}','UserController@subcategory');
-    Route::get('/addfile/{kategori_id}','UserController@addfile');
+    Route::get('/category/{kategori_id}','UserController@category')->name('category');
+    Route::get('/subcategory/{subkategori_id}','UserController@subcategory')->name('subcategory');
+    Route::get('/addfile/{subkategori_id}','UserController@addfile');
     Route::get('/searchfile/{nama_data}','UserController@searchfile');
+
+    //POST METHOD
+    Route::post('/subcategory/{kategori_id}','UserController@subcategoryStore')->name('subcategoryStore');
+    Route::post('/addfile/{subkategori_id}','UserController@addfileStore')->name('addfileStore');
+
+    //DELETE METHOD
+    Route::get('/subcategory/delete/{subkategori_id}','UserController@deleteSubkategori');
+    Route::get('/deletefile/{data_id}','UserController@deleteFile');
 });
     
     // Ubah password controller
