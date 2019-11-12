@@ -60,7 +60,7 @@
         <div class="file">
             <div class="file-img" style="background: url(../uploads/images/{{$d->filename}});"></div>
             <div class="file-detail">
-                <a href=""><i class="fa fa-folder-open"></i> {{$d->nama_data}} <br></a>
+                <a href="../../uploads/images/{{$d->filename}}"><i class="fa fa-folder-open"></i> {{$d->nama_data}} <br></a>
                 <span class="d-block mt-4 text-right"><a href="../deletefile/{{$d->id}}" class="btn btn-transparent"><i class="fa fa-trash"></i> Hapus
               File</a></span>
             </div>
