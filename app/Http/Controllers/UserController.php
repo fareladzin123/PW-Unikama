@@ -82,7 +82,7 @@ class UserController extends Controller
         ]);
 
         $photo = $request->file('filename');
-        $filename = $photo->getClientOriginalName().'.'.$photo->getClientOriginalExtension();
+        $filename = $photo->getFilename().'.'.$photo->getClientOriginalExtension();
         Storage::disk('uploads')->put($filename,File::get($photo));
 
         $data                   = new Data;

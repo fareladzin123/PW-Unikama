@@ -28,7 +28,7 @@
     <div class="form">
         <img src="../assets/img/logo.png">
         @foreach($subkategori as $s)
-        <form action="{{ route('addfileStore',$s->id)}}" method="post">
+        <form action="{{ route('addfileStore',$s->id)}}" method="post" enctype="multipart/form-data">
             {{csrf_field()}}
             <label>Nama File</label>
             <div class="input-group mb-3">
