@@ -17,7 +17,7 @@ class UserController extends Controller
         $user_id = Auth::id();
 
         $subkategori = Subkategori::where('user_id','=',$user_id)->select('id')->first();
-        $data = Data::where('subkategori_id','=',$subkategori)
+        $data = Data::where('subkategori_id','=',$subkategori->id)
             ->orderBy('id','desc')
             ->limit(4)
             ->get();

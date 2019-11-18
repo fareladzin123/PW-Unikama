@@ -39,7 +39,7 @@
         @endforeach
         </div>
 
-        @if(!!empty($data))
+        @if(!empty($data))
         <label for="" class="mt-5">Terakhir Ditambahkan</label>
         <div class="folder">
             @foreach($data as $d)
