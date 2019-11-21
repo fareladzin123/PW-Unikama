@@ -15,16 +15,22 @@ class UserController extends Controller
 {
     public function dashboard(){
         $user_id = Auth::id();
-
-        $subkategori = Subkategori::where('user_id','=',$user_id)->select('id')->first();
-        $data = Data::where('subkategori_id','=',$subkategori->id)
-            ->orderBy('id','desc')
-            ->limit(4)
-            ->get();
-        
         $kategori = Kategori::get();
 
-        return view('user-side.dashboard',['kategori' => $kategori,'data' => $data]);
+        $subkategori = Subkategori::where('user_id','=',$user_id)->select('id')->first();
+        if($subkategori != null) {
+            $data = Data::where('subkategori_id', '=', $subkategori->id)
+                ->orderBy('id', 'desc')
+                ->limit(4)
+                ->get();
+
+            return view('user-side.dashboard',['kategori' => $kategori,'data' => $data]);
+        }
+        else{
+            return view('user-side.dashboard',['kategori' => $kategori]);
+        }
+
+
     }
 
     public function category($kategori_id){
@@ -37,7 +43,7 @@ class UserController extends Controller
             ->where('user_id','=',$user_id)
             ->get();
 
-        return view('user-side.category',['kategori' => $kategori, 'subkategori' => $subkategori]);        
+        return view('user-side.category',['kategori' => $kategori, 'subkategori' => $subkategori, 'kategori_id' => $kategori_id]);
     }
 
     public function subcategory($subkategori_id){
@@ -51,7 +57,7 @@ class UserController extends Controller
         $data = Data::where('subkategori_id','=',$subkategori_id)
             ->get();
 
-        return view('user-side.subcategory',['data' => $data, 'subkategori' => $subkategori, 'kategori' => $kategori]);        
+        return view('user-side.subcategory',['data' => $data, 'subkategori' => $subkategori, 'kategori' => $kategori, 'subkategori_id' => $subkategori_id]);        
     }
 
     public function subcategoryStore(Request $request, $kategori_id){
@@ -62,7 +68,9 @@ class UserController extends Controller
         $subkategori->nama_subkategori  = $request->nama_subkategori;
         $subkategori->save(); 
 
-        return redirect()->route('category',$kategori_id);
+
+
+        return redirect()->route('category',$kategori_id)->with('alert-success','Berhasil tambah data');
     }
 
     public function searchfile(){
@@ -98,7 +106,7 @@ class UserController extends Controller
         Data::where('subkategori_id','=',$subkategori_id)->delete();
         Subkategori::where('id','=',$subkategori_id)->delete();
 
-        return redirect()->back();
+        return redirect()->back()->with('alert-success','Berhasil hapus data');
     }
 
     public function deleteFile($data_id){
