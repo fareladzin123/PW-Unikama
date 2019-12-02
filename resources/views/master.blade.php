@@ -29,8 +29,8 @@
                 <i class="fa fa-search search-icon-i"></i>
             </div>
             <div class="search-input">
-                <form action="">
-                    <input type="text" placeholder="Search Category" class="w-100">
+                <form method="GET" action="{{ route('search')}}">
+                    <input name="keyword" type="text" placeholder="Search Category" class="w-100">
                 </form>
             </div>
         </div>

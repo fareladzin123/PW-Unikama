@@ -41,3 +41,6 @@ Route::middleware(['auth','revalidate'])->group(function(){
     // Ubah password controller
     Route::get('/upPass', 'AuthController@changepass')->name('upPass');
     Route::post('/upPass', 'AuthController@uppass')->name('uppass');
+
+    //SEARCH METHOD
+    Route::get('/search', 'UserController@searchFile')->name('search');

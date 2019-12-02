@@ -27,7 +27,9 @@
         <div class="file-detail">
           <a style="cursor: pointer" data-toggle="modal" data-target="#addSubCategory"><i class="fa fa-folder-open"></i>
             {{$d->nama_data}} <br></a>
+            @if($d->created_at != null)
           <span class="d-block mt-4 text-right"><?php echo date_format($d->created_at,"N M Y - H.i A");?></span>
+            @endif
         </div>
       </div>
     <div class="modal fade" id="addSubCategory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
