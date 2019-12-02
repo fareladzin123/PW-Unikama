@@ -28,7 +28,8 @@ Route::middleware(['auth','revalidate'])->group(function(){
     Route::get('/subcategory/{subkategori_id}','UserController@subcategory')->name('subcategory');
     Route::get('/addfile/{subkategori_id}','UserController@addfile');
     Route::get('/searchfile/{nama_data}','UserController@searchfile');
-
+    Route::get('/download/{filename}','UserController@downloadFile');
+    
     //POST METHOD
     Route::post('/subcategory/{kategori_id}','UserController@subcategoryStore')->name('subcategoryStore');
     Route::post('/addfile/{subkategori_id}','UserController@addfileStore')->name('addfileStore');
