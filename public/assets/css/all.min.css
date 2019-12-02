@@ -318,6 +318,13 @@ nav img {
   .auth-form .form {
     padding: 10vh 10%;
   }
+  #action-on-form {
+    display: block !important;
+  }
+
+  #action-on-form .hapus-file {
+    margin-top: 1em !important;
+  }
 }
 
 @media only screen and (max-width: 400px) {

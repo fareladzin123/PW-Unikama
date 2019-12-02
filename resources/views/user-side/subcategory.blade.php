@@ -67,9 +67,14 @@
         <div class="file-detail">
           <a style="cursor: pointer" data-toggle="modal" data-target="{{'#modalImage'.$x }}"><i class="fa fa-folder-open"></i>
             {{$d->nama_data}} <br></a>
-          <span class="d-block mt-4 text-right"><a href="../deletefile/{{$d->id}}" class="btn btn-transparent"><i
+            <div class="d-flex" id="action-on-form">
+            <span class="d-block mt-4 text-right"><a href="../deletefile/{{$d->id}}" class="btn btn-transparent"><i
+                class="fa fa-download"></i> Unduh
+              File</a></span>
+          <span class="d-block ml-2 mt-4 text-right hapus-file"><a href="../deletefile/{{$d->id}}" class="btn btn-transparent"><i
                 class="fa fa-trash"></i> Hapus
               File</a></span>
+            </div>
         </div>
       </div>
       <div class="modal fade" id="{{'modalImage'.$x}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
