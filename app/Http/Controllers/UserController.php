@@ -29,8 +29,6 @@ class UserController extends Controller
         else{
             return view('user-side.dashboard',['kategori' => $kategori]);
         }
-
-
     }
 
     public function category($kategori_id){
@@ -73,8 +71,25 @@ class UserController extends Controller
         return redirect()->route('category',$kategori_id)->with('alert-success','Berhasil tambah data');
     }
 
-    public function searchfile(){
-        return view('user-side.findfile');        
+    public function searchFile(Request $request){
+        $this->validate($request , [
+            'keyword' => 'required',
+        ]);            
+
+        $keyword = $request->keyword;
+        
+        $user_id = Auth::id();        
+        $subkategori = Subkategori::where('user_id','=',$user_id)->select('id')->first();        
+        // dd($subkategori);
+        $hasil = Data::where('subkategori_id','=',$subkategori->id)->Where('nama_data', 'LIKE', '%' . $keyword . '%')
+            ->get();
+    
+        if(!empty($hasil)){
+            return view('user-side.findfile', ['hasil' => $hasil]);
+        }
+        else{
+            return view ('user-side.findfile')->with('alert-danger', 'No Details found. Try to search again !');
+        }                     
     }
 
     public function addfile($subkategori_id){
