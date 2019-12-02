@@ -42,6 +42,14 @@
 </nav>
 
 <content class="d-block mt-4">
+@if(\Session::has('alert-success'))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+{{Session::get('alert-success')}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+        @endif
         <div aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="../dashboard">Home</a></li>
@@ -58,9 +66,32 @@
                 <a href="../subcategory/{{$s->id}}" style="padding-top: .25rem; display: -webkit-inline-box;"><i class="fa fa-folder"></i> {{$s->nama_subkategori}}
                 </a>
                 <a href="../subcategory/delete/{{$s->id}}" class="add-data float-right ml-1"><i class="fa fa-trash"></i></a>
-                <a href="../addfile/{{$s->id}}" class="add-data float-right"><i class="fa fa-plus"></i></a>
             </div>
         @endforeach
+            <div class="category-folder text-center">
+                <a href="../addfile/{{$s->id}}" class="add-data" style="vertical-align: sub" data-toggle="modal" data-target="#addSubCategory"><i class="fa fa-plus"></i></a>
+            </div>
+
+            <div class="modal fade" id="addSubCategory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <form action="{{route('subcategoryStore',$kategori_id)}}" method="POST">
+                            {{csrf_field()}}
+                                <div class="input-group mt-1">
+
+                                    <input type="text" class="form-control" name="nama_subkategori" placeholder="Nama Subkategori">
+                                    <button type="submit" class="btn btn-warning ml-1">Kirim</button>
+                                </div>
+                            </form>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <style>

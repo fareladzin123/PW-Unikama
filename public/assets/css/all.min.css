@@ -103,6 +103,17 @@ nav img {
   transition: 0.4s;
 }
 
+.folder .file .btn-addfile-ok {
+  min-width: 188px;
+  text-align: center;
+}
+
+.folder .file .btn-addfile-ok i {
+  margin-top: 30%;
+  font-size: 4rem;
+  color: #d0d9e4;
+}
+
 .category-folder:hover, .file-detail:hover, .category-folder:focus, .file-detail:focus {
   background: rgb(239, 245, 255);
 }
@@ -277,6 +288,9 @@ nav img {
     margin: 10px 5%;
     float: right;
     width: 90%;
+  }
+  .folder .file .btn-addfile-ok i {
+    margin-top: 40%;
   }
 }
 

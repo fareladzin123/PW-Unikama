@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 //Auth Controller
-Route::get('/login', 'AuthController@indexLogin')->name('login');
+Route::get('/login', 'AuthController@indexLogin')->name('loginsubcategoryStore');
 Route::post('/login', 'AuthController@checkLogin')->name('checkLogin');
 Route::get('/logout', 'AuthController@logout')->name('logout');
 Route::get('/register', 'AuthController@indexRegister')->name('register');
