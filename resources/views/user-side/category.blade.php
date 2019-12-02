@@ -30,8 +30,8 @@
                 <i class="fa fa-search search-icon-i"></i>
             </div>
             <div class="search-input">
-                <form action="">
-                    <input type="text" placeholder="Search Category" class="w-100">
+                <form method="GET" action="{{ route('search')}}">
+                    <input name="keyword" type="text" placeholder="Search Category" class="w-100">
                 </form>
             </div>
         </div>
@@ -62,16 +62,17 @@
         <label for="">Kategori Data</label>
         <div class="folder">
         @foreach($subkategori as $s)
+        @if($subkategori != null)
             <div class="category-folder">
                 <a href="../subcategory/{{$s->id}}" style="padding-top: .25rem; display: -webkit-inline-box;"><i class="fa fa-folder"></i> {{$s->nama_subkategori}}
                 </a>
                 <a href="../subcategory/delete/{{$s->id}}" class="add-data float-right ml-1"><i class="fa fa-trash"></i></a>
             </div>
+            @endif
         @endforeach
             <div class="category-folder text-center">
-                <a href="../addfile/{{$s->id}}" class="add-data" style="vertical-align: sub" data-toggle="modal" data-target="#addSubCategory"><i class="fa fa-plus"></i></a>
+                <a href="../addfile/{{$k->id}}" class="add-data" style="vertical-align: sub" data-toggle="modal" data-target="#addSubCategory"><i class="fa fa-plus"></i></a>
             </div>
-
             <div class="modal fade" id="addSubCategory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -91,6 +92,7 @@
                     </div>
                 </div>
             </div>
+            
 
         </div>
 

@@ -24,16 +24,16 @@
       <img src="../assets/img/logo.png" alt="logo_arsipin"><span class="ml-3">Arsipin</span>
     </div>
     <div class="col-md-7">
-      <div class="search-bar">
-        <div class="search-icon pt-1 pl-4">
-          <i class="fa fa-search search-icon-i"></i>
+        <div class="search-bar">
+            <div class="search-icon pt-1 pl-4">
+                <i class="fa fa-search search-icon-i"></i>
+            </div>
+            <div class="search-input">
+                <form method="GET" action="{{ route('search')}}">
+                    <input name="keyword" type="text" placeholder="Search Category" class="w-100">
+                </form>
+            </div>
         </div>
-        <div class="search-input">
-          <form action="">
-            <input type="text" placeholder="Search Category" class="w-100">
-          </form>
-        </div>
-      </div>
     </div>
     <div class="col-md-2">
       <div class="profile-avatar float-right text-center pt-2" data-toggle="modal" data-target="#profileModal">D</div>
@@ -61,19 +61,18 @@
     <label for="">{{$s->nama_subkategori}}</label>
     @endforeach
     <div class="folder">
-      @foreach($data as $d)
+      @foreach($data as $x => $d)
       <div class="file">
         <div class="file-img" style="background: url(../uploads/images/{{$d->filename}});"></div>
         <div class="file-detail">
-          <a style="cursor: pointer" data-toggle="modal" data-target="#addSubCategory"><i class="fa fa-folder-open"></i>
+          <a style="cursor: pointer" data-toggle="modal" data-target="{{'#modalImage'.$x }}"><i class="fa fa-folder-open"></i>
             {{$d->nama_data}} <br></a>
           <span class="d-block mt-4 text-right"><a href="../deletefile/{{$d->id}}" class="btn btn-transparent"><i
                 class="fa fa-trash"></i> Hapus
               File</a></span>
         </div>
       </div>
-
-      <div class="modal fade" id="addSubCategory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      <div class="modal fade" id="{{'modalImage'.$x}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">

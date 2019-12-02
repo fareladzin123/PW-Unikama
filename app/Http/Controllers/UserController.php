@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 use App\User;
+Use Redirect;
 use App\Kategori;
 use App\Subkategori;
 use App\Data;
@@ -18,14 +19,19 @@ class UserController extends Controller
         $user_id = Auth::id();
         $kategori = Kategori::get();
 
-        $subkategori = Subkategori::where('user_id','=',$user_id)->select('id');
+        $subkategori = Subkategori::where('user_id','=',$user_id)->select('id')->first();
+
         if($subkategori != null) {
             $data = Data::whereExists(function ($query) {
+                $user_id = Auth::id();
+
                 $query->select(DB::raw(4))
                       ->from('subkategoris')
+                      ->where('user_id','=',$user_id)
                       ->orderBy('id', 'desc')
-                      ->whereRaw('subkategoris.id = data.id');
+                      ->whereRaw('subkategoris.id = data.subkategori_id');
                 })
+                ->orderBy('id', 'desc')
                 ->limit(4)
                 ->get();
 
@@ -34,8 +40,6 @@ class UserController extends Controller
         else{
             return view('user-side.dashboard',['kategori' => $kategori]);
         }
-
-
     }
 
     public function category($kategori_id){
@@ -48,7 +52,8 @@ class UserController extends Controller
             ->where('user_id','=',$user_id)
             ->get();
 
-        return view('user-side.category',['kategori' => $kategori, 'subkategori' => $subkategori, 'kategori_id' => $kategori_id]);
+            return view('user-side.category',['kategori' => $kategori, 'subkategori' => $subkategori, 'kategori_id' => $kategori_id]);
+        
     }
 
     public function subcategory($subkategori_id){
@@ -78,8 +83,32 @@ class UserController extends Controller
         return redirect()->route('category',$kategori_id)->with('alert-success','Berhasil tambah data');
     }
 
-    public function searchfile(){
-        return view('user-side.findfile');        
+    public function searchFile(Request $request){
+        $this->validate($request , [
+            'keyword' => 'required',
+        ]);            
+
+        $keyword = $request->keyword;
+        
+        // dd($subkategori);
+        $hasil = Data::whereExists(function ($query) {            
+            $user_id = Auth::id();
+
+            $query->select('*')
+                    ->from('subkategoris')
+                    ->where('user_id','=',$user_id)
+                    ->orderBy('id', 'desc')
+                    ->whereRaw('subkategoris.id = data.subkategori_id');
+            })
+            ->Where('nama_data', 'LIKE', '%' . $keyword . '%')
+            ->get();
+        if(count($hasil) !== 0){
+            return view('user-side.findfile', ['hasil' => $hasil]);
+        }
+        else{
+            return redirect('dashboard')->withErrors(['alert-fail','Data tidak ditemukan']);
+   
+        }
     }
 
     public function addfile($subkategori_id){
