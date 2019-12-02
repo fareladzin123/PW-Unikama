@@ -10,6 +10,7 @@ use App\User;
 use App\Kategori;
 use App\Subkategori;
 use App\Data;
+use DB;
 
 class UserController extends Controller
 {
@@ -17,10 +18,14 @@ class UserController extends Controller
         $user_id = Auth::id();
         $kategori = Kategori::get();
 
-        $subkategori = Subkategori::where('user_id','=',$user_id)->select('id')->first();
+        $subkategori = Subkategori::where('user_id','=',$user_id)->select('id');
         if($subkategori != null) {
-            $data = Data::where('subkategori_id', '=', $subkategori->id)
-                ->orderBy('id', 'desc')
+            $data = Data::whereExists(function ($query) {
+                $query->select(DB::raw(4))
+                      ->from('subkategoris')
+                      ->orderBy('id', 'desc')
+                      ->whereRaw('subkategoris.id = data.id');
+                })
                 ->limit(4)
                 ->get();
 
