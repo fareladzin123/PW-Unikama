@@ -59,7 +59,7 @@
             </ol>
         </div>
 
-        <label for="">Kategori Data</label>
+        <label for="">SubKategori Data</label>
         <div class="folder">
         @foreach($subkategori as $s)
         @if($subkategori != null)

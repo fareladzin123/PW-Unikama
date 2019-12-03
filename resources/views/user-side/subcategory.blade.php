@@ -68,7 +68,7 @@
           <a style="cursor: pointer" data-toggle="modal" data-target="{{'#modalImage'.$x }}"><i class="fa fa-folder-open"></i>
             {{$d->nama_data}} <br></a>
             <div class="d-flex" id="action-on-form">
-            <span class="d-block mt-4 text-right"><a href="../deletefile/{{$d->id}}" class="btn btn-transparent"><i
+            <span class="d-block mt-4 text-right"><a href="../api/download/{$d->filename}}" class="btn btn-transparent"><i
                 class="fa fa-download"></i> Unduh
               File</a></span>
           <span class="d-block ml-2 mt-4 text-right hapus-file"><a href="../deletefile/{{$d->id}}" class="btn btn-transparent"><i
