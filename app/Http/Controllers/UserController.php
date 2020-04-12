@@ -148,4 +148,20 @@ class UserController extends Controller
 
         return redirect()->back();
     }
+
+    public function downloadFile($filename){
+        $headers = [
+            'Access-Control-Allow-Origin'      => '*',
+            'Access-Control-Allow-Methods'     => 'POST, GET, OPTIONS',
+            'Access-Control-Allow-Credentials' => 'true',
+            'Access-Control-Max-Age'           => '86400',
+            'Access-Control-Allow-Headers'     => 'Content-Type, Authorization, X-Requested-With'
+        ];
+
+        $file_name = Data::where('filename', $filename)->firstOrFail();
+
+        $path = public_path(). '/uploads/images/'. $filename;
+
+        return response()->download($path, $file_name->filename, $headers);
+    }
 }
